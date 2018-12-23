@@ -132,6 +132,7 @@ export default {
   },
 
   mounted() {
+    window.addEventListener('resize', this.handleResize)
     this.prepareComponent()
   },
 
@@ -182,6 +183,10 @@ export default {
 
     watchNetworkToken() {
       this.$store.watch((state) => state.network.token, (value) => this.renderChart())
+    },
+
+    handleResize() {
+      prepareComponent()
     },
   }
 }
